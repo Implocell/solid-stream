@@ -6,7 +6,8 @@ export const Sliders = () => {
 
     return (
         <div class="sliders">
-  <input type="range" min="1" max="100" value={value()} class="slider" id="myRange" onChange={(e) => setValue(e.currentTarget.value)} />
-</div>
+            <input type="range" min="1" max="1000" value={value()} class="slider" id="myRange" onInput={(e) => setValue(e.currentTarget.value)} />
+            {value()}
+        </div>
     )
 }

@@ -1,16 +1,30 @@
 import { createEffect, createSignal, onCleanup } from "solid-js"
 
+interface Props {
+  symbol: string
+}
 
-export const Ticker = ({ticker}:{ticker:string}) => {
-    const [value, setValue] = createSignal("")
-    const ws = new WebSocket(`ws://localhost:4503/updates/${ticker}`)
+interface Ticker {
+  symbol: string;
+  name: string;
+  value: number;
+  updated: number;
+}
+
+export const Ticker = ({ symbol }: Props) => {
+    const [ticker, setTicker] = createSignal({} as Ticker)
+
+    const ws = new WebSocket(`ws://localhost:4503/updates/${symbol}`)
 
     ws.onmessage = (e) => {
-      setValue(`${e.data}`)
+      setTicker(JSON.parse(e.data));
     }
+
     onCleanup(()=> ws.close())
   return (
     <div>
-        <span>Current Time:</span>{value()}</div>
+      <h3>[{ticker().symbol}] {ticker().name}</h3>
+      <span>{ticker().value?.toFixed(2)} @ {(new Date(ticker().updated)).toLocaleTimeString()}</span>
+    </div>
   )
 }
