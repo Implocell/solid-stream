@@ -1,7 +1,7 @@
 import { Ticker } from "../components/Ticker"
 
 
-export const Tickers = () => {
+export const HighlightedTickers = () => {
   return (
     <>
     <div>Header</div>

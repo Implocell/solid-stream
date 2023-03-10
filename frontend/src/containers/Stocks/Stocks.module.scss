@@ -1,0 +1,8 @@
+.stocksContainer {
+    display: flex;
+    gap: 16px;
+
+    > * {
+        flex: 1;
+    }
+}

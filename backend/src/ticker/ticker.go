@@ -48,5 +48,5 @@ func (t *Ticker) GenerateUpdate(timestamp int64) {
 
 	t.Value = (1 + math.Sin(timeSinceStart)/100) * t.InitialValue
 	t.Updated = timestamp
-	t.NextUpdate = timestamp + int64(rand.Float64()*float64(t.AvgUpdateDelay))
+	t.NextUpdate = timestamp + int64((rand.Float64()+0.5)*float64(t.AvgUpdateDelay))
 }
