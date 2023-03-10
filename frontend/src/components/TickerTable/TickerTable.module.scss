@@ -2,26 +2,37 @@
     display: grid;
     grid-template-columns: 1fr max-content max-content;
     border: 1px dotted grey;
+    vertical-align: middle;
 
     .row {
         display: contents;
     }
 
     .cell {
+        font-size: 1em;
         padding: 4px;
         text-align: left;
 
         &[role="columnheader"] {
             border-bottom: 1px dotted grey;
+            font-size: 0.85em !important;
         }
 
         &:nth-child(n + 2) {
             border-left: 1px dotted grey;
             background-color: rgba(0, 0, 0, 0.1);
         }
-    }
 
-    .value {
-        text-align: right;
+        &.value {
+            text-align: right;
+
+            .decimals {
+                font-size: 0.85em;
+            }
+        }
+
+        &.updated {
+            font-size: 0.85em;
+        }
     }
 }

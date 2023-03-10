@@ -113,7 +113,7 @@ func onAllInstrumentsUpdate(w http.ResponseWriter, req *http.Request) {
 
 func monitor() {
 	for range time.Tick(time.Second * 10) {
-		log.Print(messagesSincePrint, " messages last 15 sec (", messagesSincePrint/15, " msg/s)")
+		log.Print(messagesSincePrint, " messages last 10 sec (", messagesSincePrint/10, " msg/s)")
 		messagesSincePrint = 0
 	}
 }

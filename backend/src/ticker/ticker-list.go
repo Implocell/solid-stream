@@ -29,7 +29,7 @@ func CreateAllTickers() []*Ticker {
 		NewTicker("BIC", "B I C", 27, NORMAL, 2110),
 		NewTicker("BOI", "Big (the cat) On Ice", 42, NORMAL, 4300),
 		NewTicker("UNO", "Uno", 8, NORMAL, 800),
-		NewTicker("BRD", "Birdbird exploration", 1284, NORMAL, 240),
+		NewTicker("BBE", "BirdBird Exploration", 1284, NORMAL, 240),
 		NewTicker("ANO", "Ano", 8, NORMAL, 800),
 		NewTicker("BNO", "BNO", 28, NORMAL, 800),
 		NewTicker("CNO", "CNO", 83, NORMAL, 800),

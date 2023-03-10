@@ -6,8 +6,8 @@ export const Stocks = () => {
         <>
             <div>Header</div>
             <div class={styles.stocksContainer}>
-                <TickerTable />
-                <TickerTable />
+                <TickerTable initialSort={{ key: 'updated', order: 'DESC' }} />
+                <TickerTable initialSort={{ key: 'updated', order: 'ASC' }} />
             </div>
         </>
     );
