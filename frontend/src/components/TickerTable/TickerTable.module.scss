@@ -1,0 +1,27 @@
+.table {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    border: 1px dotted grey;
+
+    .row {
+        display: contents;
+    }
+
+    .cell {
+        padding: 4px;
+        text-align: left;
+
+        &[role="columnheader"] {
+            border-bottom: 1px dotted grey;
+        }
+
+        &:nth-child(n + 2) {
+            border-left: 1px dotted grey;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .value {
+        text-align: right;
+    }
+}

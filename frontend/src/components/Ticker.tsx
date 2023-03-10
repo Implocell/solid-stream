@@ -14,7 +14,7 @@ interface Ticker {
 export const Ticker = ({ symbol }: Props) => {
     const [ticker, setTicker] = createSignal({} as Ticker)
 
-    const ws = new WebSocket(`ws://localhost:4503/updates/${symbol}`)
+    const ws = new WebSocket(`ws://localhost:4503/stock/${symbol}`)
 
     ws.onmessage = (e) => {
       setTicker(JSON.parse(e.data));
